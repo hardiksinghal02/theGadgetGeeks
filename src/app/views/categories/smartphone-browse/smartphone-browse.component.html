@@ -1,0 +1,180 @@
+<mat-spinner *ngIf='loading'></mat-spinner>
+<div class="container-fluid row main-container ">
+  <div style="text-align: center;" class="col-12">
+    <mat-card>
+      <h1>Find Smartphones based on your preferences</h1>
+      <hr>
+    </mat-card>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 filters">
+    <mat-card class="filter-card">
+      <p>
+        <button type="button" mat-raised-button color='accent' data-toggle="collapse"
+        data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+          Filters
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>BRAND</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="brands">
+                <div class="form-group" *ngFor='let brand of brands'>
+                  <mat-checkbox (change)='onFilterChange(filters.brands, brand, $event)' [value]='brand'>{{brand}}</mat-checkbox>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>RAM</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let ram of RAM'>
+                <mat-checkbox (change)='onFilterChange(filters.RAM , ram, $event)' [value]='ram'>{{ram}}</mat-checkbox>
+              </div>
+
+              </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>INTERNAL STORAGE</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let storage of internalStorage'>
+                <mat-checkbox (change)='onFilterChange(filters.internalStorage, storage, $event)' [value]='storage'>{{storage}}</mat-checkbox>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>BATTERY CAPACITY</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let battery of Battery'>
+                <mat-checkbox (change)='onFilterChange(filters.Battery, battery, $event)' [value]='battery'>{{battery}}</mat-checkbox>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>SCREEN SIZE</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let screen of ScreenSize'>
+                <mat-checkbox (change)='onFilterChange(filters.ScreenSize, screen, $event)' [value]='screen'>{{screen}}</mat-checkbox>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>Operating System</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let os of OS'>
+                <mat-checkbox (change)='onFilterChange(filters.OS, os, $event)' [value]='os'>{{os}}</mat-checkbox>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>Primary Camera</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let pCamera of primaryCamera'>
+                <mat-checkbox (change)='onFilterChange(filters.primaryCamera, pCamera, $event)' [value]='pCamera'>{{pCamera}}</mat-checkbox>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>Secondary Camera</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let sCamera of secondaryCamera'>
+                <mat-checkbox (change)='onFilterChange(filters.secondaryCamera, sCamera, $event)' [value]='sCamera'>{{sCamera}}</mat-checkbox>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>Clock Speed</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let cSpeed of clockSpeed'>
+                <mat-checkbox (change)='onFilterChange(filters.clockSpeed, cSpeed, $event)' [value]='cSpeed'>{{cSpeed}}</mat-checkbox>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>No. of Cores</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-body">
+              <div class="form-group" *ngFor='let core of cores'>
+                <mat-checkbox (change)='onFilterChange(filters.cores, core, $event)' [value]='core'>{{core}}</mat-checkbox>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+      </div>
+    </mat-card>
+  </div>
+
+  <div *ngIf='!loading' class="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12 product-list">
+    <mat-card>
+      <div class="message" *ngIf='products.length === 0'>
+        <h1>No products found</h1>
+      </div>
+      <div class="container-fluid row product-container">
+
+
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-4 col-6 product" *ngFor='let product of products'>
+            <div [routerLink]='["/product",product.id]' [queryParams]="{type: 'smartphone'}" class="product-box">
+              <div class="image-box">
+                <img class="product-image" [src]="product['title image']" alt="">
+              </div>
+              <div class="content">
+                <p>
+                  {{product.title}}
+                </p>
+                <strong>{{product.Price}} Rs.</strong>
+              </div>
+            </div>
+          </div>
+
+
+
+      </div>
+    </mat-card>
+  </div>
+
+</div>
+
+

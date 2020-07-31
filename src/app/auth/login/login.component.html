@@ -1,0 +1,25 @@
+<mat-spinner *ngIf='loading'></mat-spinner>
+<div  class="container-fluid body row">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3 col-xl-3"></div>
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+    <mat-card>
+      <h2 class="card-header">Login</h2>
+      <form (submit)='onSubmit(loginForm)' #loginForm='ngForm'>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  required name='email' ngModel email>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword" required name='password' ngModel>
+        </div>
+        <div class="form-group submit-button">
+          <button [disabled]='loginForm.invalid' type="submit" mat-raised-button color='primary'>Login</button>
+        </div>
+
+      </form>
+    </mat-card>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3 col-xl-3"></div>
+
+</div>

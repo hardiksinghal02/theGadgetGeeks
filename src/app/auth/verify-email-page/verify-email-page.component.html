@@ -1,0 +1,22 @@
+<div class="container-fluid row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <mat-card>
+      <mat-spinner *ngIf='status === null'></mat-spinner>
+      <div class="container" *ngIf='status === null'>
+        <div style="text-align: center;" class="heading">
+          <h2>Verifying...</h2>
+        </div>
+      </div>
+      <div class="container" *ngIf='status !=null'>
+        <div style="text-align: center;" class="heading" *ngIf='status'>
+          <h2>Your email has been verified</h2>
+        </div>
+        <div style="text-align: center;" class="heading" *ngIf='!status'>
+          <h2>Error Occured</h2>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-2"></div>
+</div>

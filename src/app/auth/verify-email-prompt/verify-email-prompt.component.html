@@ -1,0 +1,11 @@
+<div class="container main-container">
+  <mat-card>
+    <div class="header">
+      <h2>A verification Email has been sent to your Email ID</h2>
+    </div>
+    <div class="resend-body">
+      <p>Didn't receive the mail ?</p>
+      <button [disabled]='buttonDisabled' (click)='sendEmailAgain()' mat-raised-button color='primary'>{{buttonDisabled ? 'Please wait '+counter+'s' : 'Click to send mail again'}}</button>
+    </div>
+  </mat-card>
+</div>

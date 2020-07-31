@@ -1,0 +1,32 @@
+div{
+  padding: 0;
+}
+.body{
+  background-color: rgb(243, 243, 243);
+  margin: 0;
+}
+
+mat-card{
+  margin: 40px auto;
+}
+
+.form-group{
+  width: 80%;
+  margin: 20px auto;
+}
+
+.card-header{
+  background-color: white;
+  text-align: center;
+}
+
+.submit-button{
+  text-align: center;
+}
+
+mat-spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+}

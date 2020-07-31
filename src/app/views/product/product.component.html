@@ -1,0 +1,32 @@
+<div class="main-container container-fluid row">
+
+  <div class=" card-div col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
+    <mat-card>
+      <div class="container-fluid row content-div ">
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12 row image-div">
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3 image-container">
+            <div (mouseenter) = 'highlightedImage = image' class="img-box" *ngFor='let image of images'>
+              <img class="navigator-image" [src]="image" alt="">
+            </div>
+
+          </div>
+          <div class="col-xl-10 col-lg-10 col-md-10 col-sm-9 col-9 highlighted-image-container">
+            <div class="highlighted-image-box">
+              <img [src]='highlightedImage' alt="">
+            </div>
+          </div>
+        </div>
+        <div class="specs-div col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12">
+          <br><br>
+          <div class="product-title">
+            <h2>{{productData.title}}</h2>
+          </div>
+          <div class="specs">
+            <app-product-smartphone [specs] = 'productData' *ngIf='productType === "smartphone"'></app-product-smartphone>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+</div>

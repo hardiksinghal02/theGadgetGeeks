@@ -1,0 +1,122 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <mat-nav-list>
+      <a *ngIf='user === null'  mat-list-item routerLink='/login' (click)='sidenav.close()'>
+        <mat-icon>lock_open</mat-icon>
+        <span class='nav-caption'>Login</span>
+      </a>
+      <a  mat-list-item routerLink='/signup' (click)='sidenav.close()'>
+        <mat-icon>how_to_reg</mat-icon>
+        <span class='nav-caption'>Signup</span></a>
+      <a mat-list-item routerLink='/profile' (click)='sidenav.close()'>
+        <mat-icon>face</mat-icon>
+        <span class='nav-caption'>Profile</span></a>
+        <mat-list-item (click)='sidenav.close()'>
+          <button mat-icon-button  >
+            <mat-icon>exit_to_app</mat-icon>
+            <span class='nav-caption'>Logout</span></button>
+        </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <nav class="navbar">
+      <div class="auth row container-fluid">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="auth-link-box">
+            <a *ngIf='!user'  routerLink='/login' class="auth-link">Login</a>
+            <a *ngIf='!user'  routerLink='/signup' class="auth-link">Signup</a>
+            <a *ngIf='!!user' routerLink='/auth/login' class="auth-link">My account</a>
+            <a *ngIf='!!user' routerLink='/auth/login' class="auth-link">Wishlist</a>
+            <a *ngIf='!!user' (click)='onLogout()' class="auth-link">Logout</a>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="search-area row container-fluid">
+        <div class="col-1"></div>
+        <div class="col-10 row">
+          <div class="col-3 title">
+            <h1 routerLink='/' style="color: white;">TheGadgetGeeks</h1>
+          </div>
+          <div class="col-7 serach-div">
+            <div class="input-group">
+              <input type="text" class="form-control search-input" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button mat-icon-button type="button" class="search-button" ><mat-icon>search</mat-icon></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </nav>
+    <div class="toolbar row container-fluid">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <button class="toolbar-button">SMARTPHONES</button>
+      <button class="toolbar-button">LAPTOPS</button>
+      <button class="toolbar-button">CAMERA</button>
+      <button class="toolbar-button">SPEAKERS</button>
+
+
+
+    </div>
+    <div class="col-1"></div>
+  </div>
+    <main>
+      <router-outlet></router-outlet>
+
+    </main>
+    <!-- <mat-menu #animals="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+      <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+    </mat-menu>
+
+    <mat-menu #vertebrates="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+      <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+      <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+      <button mat-menu-item>Birds</button>
+      <button mat-menu-item>Mammals</button>
+    </mat-menu>
+
+    <mat-menu #invertebrates="matMenu">
+      <button mat-menu-item>Insects</button>
+      <button mat-menu-item>Molluscs</button>
+      <button mat-menu-item>Crustaceans</button>
+      <button mat-menu-item>Corals</button>
+      <button mat-menu-item>Arachnids</button>
+      <button mat-menu-item>Velvet worms</button>
+      <button mat-menu-item>Horseshoe crabs</button>
+    </mat-menu>
+
+    <mat-menu #fish="matMenu">
+      <button mat-menu-item>Baikal oilfish</button>
+      <button mat-menu-item>Bala shark</button>
+      <button mat-menu-item>Ballan wrasse</button>
+      <button mat-menu-item>Bamboo shark</button>
+      <button mat-menu-item>Banded killifish</button>
+    </mat-menu>
+
+    <mat-menu #amphibians="matMenu">
+      <button mat-menu-item>Sonoran desert toad</button>
+      <button mat-menu-item>Western toad</button>
+      <button mat-menu-item>Arroyo toad</button>
+      <button mat-menu-item>Yosemite toad</button>
+    </mat-menu>
+
+    <mat-menu #reptiles="matMenu">
+      <button mat-menu-item>Banded Day Gecko</button>
+      <button mat-menu-item>Banded Gila Monster</button>
+      <button mat-menu-item>Black Tree Monitor</button>
+      <button mat-menu-item>Blue Spiny Lizard</button>
+      <button mat-menu-item disabled>Velociraptor</button>
+    </mat-menu> -->
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

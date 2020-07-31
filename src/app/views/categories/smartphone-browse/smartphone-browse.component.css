@@ -1,0 +1,84 @@
+button{
+  outline: none;
+}
+
+
+.main-container{
+  margin: 0;
+  padding: 0;
+}
+
+div{
+  margin: 20px 0;
+}
+
+.filters{
+  text-align: center;
+}
+
+.filter-heading{
+  margin: 0;
+}
+
+.filter-body, .form-group{
+  margin: 0;
+}
+
+label{
+  float: left;
+}
+
+.filter-body{
+  max-height: 150px;
+  overflow: auto;
+}
+
+.form-group{
+  padding: 0 10px;
+  text-align: left;
+}
+
+.filter-card{
+  padding:10PX 0;
+  position: sticky;
+}
+
+.mat-expansion-panel{
+  margin: 2px 0;
+}
+
+strong{
+  font-weight:500;
+}
+
+.product-box{
+  margin: 0;
+  padding: 0 10px;
+  display: inline-block;
+  border: 1px solid rgb(221, 215, 215);
+  height: 100%;
+  border-radius: 5px;
+  display: block;
+  transition: 0.5s;
+}
+
+.product-box:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.product-image{
+  width: 60%;
+}
+
+.product-container{
+  text-align: center;
+}
+
+mat-spinner{
+  position: fixed;
+  left: 50%;
+  top:50%;
+  z-index: 99;
+}

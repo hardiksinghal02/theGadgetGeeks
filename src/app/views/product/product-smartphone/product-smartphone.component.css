@@ -1,0 +1,32 @@
+.main-container{
+  border: 1px solid rgb(243, 243, 243);
+  padding: 0px;
+}
+
+.heading{
+  border-bottom: 1px solid rgb(243, 243, 243);
+  padding: 20px;
+}
+
+.specs-category{
+  padding: 20px;
+  border-bottom: 1px solid rgb(243, 243, 243);
+}
+
+table, tr{
+  width: 100%;
+}
+
+/* tr{
+  border-bottom: 1px solid rgb(243, 243, 243);
+
+} */
+th{
+  width: 30%;
+  font-weight: normal;
+  color: rgb(124, 123, 122);
+}
+
+td{
+  text-align: justify;
+}
